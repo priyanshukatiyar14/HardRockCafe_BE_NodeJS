@@ -7,6 +7,7 @@ const menuSchema = {
     description: String,
     category: String,
     imagePath: String,
+    quantity:Number,
 }
 
 

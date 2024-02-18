@@ -6,9 +6,10 @@ const ObjectId = require('mongodb').ObjectId;
 
 
 require('dotenv').config();
+
 const usersignup= async (req, res) => {
-    console.log(req.body);
     const salt = await bcrypt.genSalt(10);
+    
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     try{
         const user = new User({
@@ -30,6 +31,7 @@ const usersignup= async (req, res) => {
             res.status(500).send(err);
         }
     }
+
 
 }
 const userlogin= async (req, res) => {

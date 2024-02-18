@@ -18,6 +18,7 @@ const mycontroller = require('./menucontroller.js');
   
 // Requests 
 router.delete('/delete/:id', mycontroller.deletemenuitem);
+router.put('/:id', upload.single('image'),mycontroller.putmenuitem);
 router.get('/', mycontroller.getmenu);
 router.post('/', upload.single('image'),mycontroller.postmenuitem);
 module.exports = router;
